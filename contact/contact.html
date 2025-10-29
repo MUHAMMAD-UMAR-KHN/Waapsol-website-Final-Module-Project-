@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
 </head>
 
 <body>
@@ -97,21 +99,11 @@
             </div>
 
             <div class="form-group">
-                <label for="budget">Budget Range</label>
-                <select id="budget" name="budget">
-                    <option value="" disabled selected>Select budget range</option>
-                    <option value="low">$500 - $1,000</option>
-                    <option value="medium">$1,000 - $5,000</option>
-                    <option value="high">$5,000+</option>
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="message">Message <sup>*</sup></label>
                 <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button onclick="submitData()" type="submit" class="submit-btn">Send Message</button>
         </form>
     </div>
     <!-- contact form work starts here -->
@@ -159,7 +151,7 @@
             <p>© 2025 Waapsol Tech Limited — All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script src="./contact.js"></script>
 
 </body>
 
