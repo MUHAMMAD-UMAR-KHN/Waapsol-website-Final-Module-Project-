@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto_Condensed-Regular.ttf");
 }
@@ -11,7 +11,8 @@
 @font-face {
   font-family: "poppins";
   src: url("../assets/fonts/Poppins-SemiBold.ttf");
-}
+} */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
   margin: 0;
@@ -21,12 +22,15 @@
 
 body {
   overflow-x: hidden;
+  background-color: whitesmoke;
+
 }
 
 /* ========== NAVBAR ========== */
 .navbar {
   border: 1px solid rgb(226, 222, 222);
-  box-shadow: 2px 1px 10px rgb(62, 59, 196);
+  box-shadow: 2px 1px 10px rgb(35, 176, 252);
+;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -45,14 +49,14 @@ body {
 .navbar .navlinks .links {
   text-decoration: none;
   color: black;
-  font-family: "Roboto black";
+  font-family: "Inter","Roboto black";
   padding-right: 35px;
   text-align: center;
   font-size: 15px;
 }
 
 .navbar .navlinks .links:hover {
-  color: rgb(33, 71, 197);
+color: rgb(35, 176, 252);
 }
 
 a:hover {
@@ -61,8 +65,11 @@ a:hover {
 }
 
 .logo {
-  height: 120px;
-  width: 150px;
+      height: 70px;
+    width: 150px;
+    position:relative;
+    bottom: 40px;
+    
 }
 
 .logo div img {
@@ -77,27 +84,28 @@ a:hover {
 }
 
 #hero-section #hero-1 h1 {
-  font-family: "Roboto black";
+  font-family: "Inter","Roboto black";
   font-size: 60px;
   text-align: center;
 }
 
 #hero-section #hero-1 .hero-1-content {
   text-align: center;
-  font-family: "poppins";
+  font-family: "Inter","poppins";
   width: 50%;
   margin: 0 auto;
 }
 
 #hero-section #hero-1 h1 span {
-  color: rgb(33, 71, 197);
+color: rgb(35, 176, 252);
 }
 
 #project-button {
   margin-top: 50px;
   padding: 10px 15px;
-  font-family: "Roboto";
-  background-color: rgb(33, 71, 197);
+  font-family: "Inter","Roboto";
+  background-color:  rgb(35, 176, 252);
+;
   outline: none;
   border: none;
   color: white;
@@ -121,15 +129,16 @@ a:hover {
   align-items: center;
   gap: 10px;
   padding: 10px;
-  border: 1px solid rgb(33, 71, 197);
+  border: 1px solid  rgb(35, 176, 252);
+
   width: 200px;
   border-radius: 5px;
-  font-family: "Roboto black";
+  font-family: "Inter","Roboto black";
   text-align: center;
 }
 
 .icon {
-  color: rgb(33, 71, 197);
+color: rgb(35, 176, 252);
 }
 
 /* ========== FOOTER ========== */
@@ -137,12 +146,12 @@ a:hover {
   margin-top: 25px;
   background-color: white;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter","Roboto", sans-serif;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 40px 20px;
-  border-top: 1px solid #1e90ff;
+  border-top: 1px solid  rgb(35, 176, 252);
 }
 
 #footer > div {
@@ -154,7 +163,7 @@ a:hover {
 #footer-1 h1,
 #footer-2 h2,
 #footer-3 h2 {
-  color: rgb(33, 71, 197);
+color: rgb(35, 176, 252);
   margin-bottom: 20px;
 }
 
@@ -174,7 +183,8 @@ a:hover {
 .social-icons a:hover {
   color: #1e90ff;
   padding: 5px;
-  border: 1px solid #1e90ff;
+  border: 1px solid rgb(35, 176, 252);
+;
   border-radius: 50%;
 }
 
@@ -188,7 +198,7 @@ a:hover {
 }
 
 #footer-2 a:hover {
-  color: #1e90ff;
+color: rgb(35, 176, 252);
 }
 
 .footer-bottom {
@@ -197,8 +207,9 @@ a:hover {
   padding: 20px 0;
   font-size: 14px;
   color: #cccccc;
-  border-top: 1px solid #1e90ff;
-  font-family: "Roboto";
+  border-top: 1px solid  rgb(35, 176, 252);
+;
+  font-family: "Inter","Roboto";
 }
 
 /* ========== FORM ========== */
@@ -237,11 +248,11 @@ p {
 label {
   font-weight: 500;
   margin-bottom: 5px;
-  font-family: "Roboto";
+  font-family: "Inter","Roboto";
 }
 
 sup {
-  color: blue;
+color: rgb(35, 176, 252);
 }
 
 input,
@@ -251,7 +262,7 @@ textarea {
   padding: 10px;
   border: 1px solid #d3cfcf;
   border-radius: 6px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter","Roboto", sans-serif;
   font-size: 15px;
   outline: none;
 }
@@ -259,7 +270,8 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border: 2px solid #007bff;
+  border: 2px solid rgb(35, 176, 252);
+;
 }
 
 .select {
@@ -268,14 +280,15 @@ textarea:focus {
 }
 
 .submit-btn {
-  background-color: rgb(33, 71, 197);
+  background-color: rgb(35, 176, 252);
+;
   color: #fff;
   border: none;
   padding: 12px 20px;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: "background" 0.3s ease;
   display: block;
   margin: 20px auto 0;
 }
