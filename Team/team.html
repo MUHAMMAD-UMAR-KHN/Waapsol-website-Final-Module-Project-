@@ -13,19 +13,26 @@
 
 <body>
     <!-- navbar starts -->
-    <div class="navbar">
-        <div class="logo">
-            <div>
-                <img src="../assets/images/logo.png" alt="">
-            </div>
-        </div>
-        <div class="navlinks">
-            <a class="links" href="../index.html">Home</a>
-            <a class="links" href="../servicesfolder/services.html">Services</a>
-            <a class="links" href="../Team/team.html">Team</a>
-            <a class="links" href="../contact/contact.html">Contact</a>
-        </div>
+    <nav class="navbar">
+    <div class="logo">
+        <img src="../assets/images/logo.png" alt="Logo">
     </div>
+    
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Navigation Links -->
+    <div class="navlinks">
+        <a class="links" href="../index.html">Home</a>
+        <a class="links" href="../servicesfolder/services.html">Services</a>
+        <a class="links" href="../Team/team.html">Team</a>
+        <a class="links" href="../contact/contact.html">Contact</a>
+    </div>
+</nav>
     <!-- navbar ends -->
     <!-- hero section starts -->
     <div id="hero-section">
@@ -33,9 +40,11 @@
             <h1>Our <span>Team</span></h1>
             <p>Meet the talented professionals behind our success. Our diverse team brings together expertise from
                 various fields to deliver exceptional results.</p>
-            <div id="contact-btn">
-                <a href="../contact/contact.html">Contact Us</a>
-            </div>
+
+            <div class="herobtn" ><a id="started" href="../contact/contact.html">Get Started <span><i
+            class="fa-solid fa-arrow-right-long"></i></span></a></div>
+
+
         </div>
         <div class="hero-2">
             <div class="icon-container">
@@ -65,7 +74,7 @@
     <!-- team members section starts here -->
     <div id="team">
         <div id="team-text">
-            <h1>Our Team Members</h1>
+            <h1>Our <span style="color: rgb(35, 176, 252);">Team Members </span></h1>
             <p>Meet the talented professionals who make our company great.</p>
         </div>
         <div class="container">
@@ -99,7 +108,7 @@
         </div>
     </div>
     <!-- team members section ends here -->
-     <footer>
+    <footer>
         <div id="footer">
             <div id="footer-1">
                 <h1>Waapsol Tech Limited</h1>
@@ -141,6 +150,33 @@
             <p>© 2025 Waapsol Tech Limited — All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navlinks = document.querySelector('.navlinks');
+    
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navlinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on any link
+    document.querySelectorAll('.navlinks .links').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navlinks.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navlinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navlinks.classList.remove('active');
+        }
+    });
+</script>
+
 </body>
 
 </html>
