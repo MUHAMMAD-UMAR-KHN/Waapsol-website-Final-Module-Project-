@@ -9,33 +9,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-database-compat.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-database.js"></script> -->
 
 </head>
 
 <body>
     <!-- navbar starts -->
     <nav class="navbar">
-    <div class="logo">
-        <img src="../assets/images/logo.png" alt="Logo">
-    </div>
-    
-    <!-- Hamburger Menu Icon -->
-    <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    
-    <!-- Navigation Links -->
-    <div class="navlinks">
-        <a class="links" href="../index.html">Home</a>
-        <a class="links" href="../servicesfolder/services.html">Services</a>
-        <a class="links" href="../Team/team.html">Team</a>
-        <a class="links" href="../contact/contact.html">Contact</a>
-    </div>
-</nav>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Logo">
+        </div>
+
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navlinks">
+            <a class="links" href="../index.html">Home</a>
+            <a class="links" href="../servicesfolder/services.html">Services</a>
+            <a class="links" href="../Team/team.html">Team</a>
+            <a class="links" href="../contact/contact.html">Contact</a>
+        </div>
+    </nav>
     <!-- navbar ends -->
 
     <!-- hero section starts here -->
@@ -45,7 +47,8 @@
             <h1>Get In <span>Touch</span></h1>
             <p class="hero-1-content">Have a project in mind? We'd love to hear from you. Let's work together to bring
                 your ideas to life.</p>
-            <button id="project-button" class="scrollBtn">Start a Project <span><i class="fa-solid fa-arrow-right"></i></span></button>
+            <button id="project-button" class="scrollBtn">Start a Project <span><i
+                        class="fa-solid fa-arrow-right"></i></span></button>
         </div>
         <div id="hero-2">
             <div class="contact-methods">
@@ -108,7 +111,8 @@
 
             <div class="form-group">
                 <label for="message">Message <sup>*</sup></label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"
+                    required></textarea>
             </div>
 
             <button onclick="submitData()" type="submit" class="submit-btn">Send Message</button>
@@ -159,44 +163,207 @@
             <p>© 2025 Waapsol Tech Limited — All Rights Reserved.</p>
         </div>
     </footer>
-    <script src="./contact.js" defer></script>
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const navlinks = document.querySelector('.navlinks');
-    
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navlinks.classList.toggle('active');
-    });
-    
-    // Close menu when clicking on any link
-    document.querySelectorAll('.navlinks .links').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navlinks.classList.remove('active');
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navlinks = document.querySelector('.navlinks');
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navlinks.classList.toggle('active');
         });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navlinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navlinks.classList.remove('active');
+
+        // Close menu when clicking on any link
+        document.querySelectorAll('.navlinks .links').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navlinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navlinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navlinks.classList.remove('active');
+            }
+        });
+        const btn = document.querySelector(".scrollBtn");
+        const form = document.getElementById("myForm");
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            form.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+    </script>
+
+
+
+
+
+    <!-- Realtime database script provide by chatgpt -->
+
+    <!-- Firebase compat SDK (keeps old syntax) -->
+
+    <!-- <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
+            authDomain: "waapsol-form-b0d73.firebaseapp.com",
+            projectId: "waapsol-form-b0d73",
+            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
+            messagingSenderId: "207057410969",
+            appId: "1:207057410969:web:91dcde38265cf001a0d108",
+            measurementId: "G-DZFC07QYCF"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            var database = firebase.database();
+
+            function submitData() {
+            var namee = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var company = document.getElementById("company").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            var clientObj = {
+                clientname: namee,
+                clientemail: email,
+                clientphone: phone,
+                clientcompany: company,
+                clientsubject: subject,
+                clientmessage: message,
+                };
+                
+                console.log(clientObj);
+                firebase.database().ref("client").push(clientObj);
+                }
+            </script> -->
+
+
+
+
+
+    <!-- <script src="./contact.js" ></script> -->
+
+
+
+    <!-- Firebase SDK v9+ (modular) -->
+    <script type="module">
+        // Import needed Firebase functions from CDN
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
+            authDomain: "waapsol-form-b0d73.firebaseapp.com",
+            projectId: "waapsol-form-b0d73",
+            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
+            messagingSenderId: "207057410969",
+            appId: "1:207057410969:web:91dcde38265cf001a0d108",
+            measurementId: "G-DZFC07QYCF"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Function to submit form data to Firebase Realtime Database
+        window.submitData = function () {
+            const namee = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const company = document.getElementById("company").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            const clientObj = {
+                clientname: namee,
+                clientemail: email,
+                clientphone: phone,
+                clientcompany: company,
+                clientsubject: subject,
+                clientmessage: message,
+            };
+
+            console.log(clientObj);
+
+            // Push to Realtime Database
+            push(ref(database, "client"), clientObj)
+                .then(() => {
+                    alert("Data submitted successfully!");
+                })
+                .catch((error) => {
+                    console.error("Error submitting data:", error);
+                });
+        };
+    </script>
+
+
+
+    <!-- Version 8.3.3 -->
+
+
+    <!-- Firebase SDKs (v8.3.3) -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
+            authDomain: "waapsol-form-b0d73.firebaseapp.com",
+            projectId: "waapsol-form-b0d73",
+            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
+            messagingSenderId: "207057410969",
+            appId: "1:207057410969:web:91dcde38265cf001a0d108",
+            measurementId: "G-DZFC07QYCF"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the database service
+        var database = firebase.database();
+
+        // Function to submit form data
+        function submitData() {
+            var namee = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var company = document.getElementById("company").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            var clientObj = {
+                clientname: namee,
+                clientemail: email,
+                clientphone: phone,
+                clientcompany: company,
+                clientsubject: subject,
+                clientmessage: message,
+            };
+
+            console.log(clientObj);
+
+            // Push to Realtime Database
+            firebase.database().ref("client").push(clientObj)
+                .then(function () {
+                    alert("Data submitted successfully!");
+                })
+                .catch(function (error) {
+                    console.error("Error submitting data:", error);
+                });
         }
-    });
-const btn = document.querySelector(".scrollBtn"); 
-const form = document.getElementById("myForm");
+    </script> -->
 
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  form.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-});
 
-</script>
+
 </body>
 
 </html>
