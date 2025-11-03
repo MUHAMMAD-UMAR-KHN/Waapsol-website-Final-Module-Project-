@@ -1,16 +1,16 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBRVwC8nKf2GmG72mjqEhJBbLJItCBSf5Y",
-  authDomain: "waapsol-form.firebaseapp.com",
-  projectId: "waapsol-form",
-  storageBucket: "waapsol-form.firebasestorage.app",
-  messagingSenderId: "662163754055",
-  appId: "1:662163754055:web:89b40fb59d7dcb351df562",
-  measurementId: "G-NG73P9B1J2"
+  apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
+  authDomain: "waapsol-form-b0d73.firebaseapp.com",
+  projectId: "waapsol-form-b0d73",
+  storageBucket: "waapsol-form-b0d73.firebasestorage.app",
+  messagingSenderId: "207057410969",
+  appId: "1:207057410969:web:91dcde38265cf001a0d108",
+  measurementId: "G-DZFC07QYCF"
 };
 
 // Initialize Firebase
 var app = firebase.initializeApp(firebaseConfig);
-var db = firebase.database();
+var database = firebase.database();
 
 function submitData(){
 var namee = document.getElementById("name").value;
