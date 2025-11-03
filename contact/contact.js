@@ -20,7 +20,7 @@ var company = document.getElementById("company").value;
 var subject = document.getElementById("subject").value;
 var message = document.getElementById("message").value;
 
-var client_obj = {
+var clientObj = {
     clientname : namee,
     clientemail : email,
     clientphone : phone,
@@ -29,5 +29,5 @@ var client_obj = {
     clientmessage : message,
 };
 console.log(client_obj)
-  firebase.database().ref("client").push(client_obj);
+  firebase.database().ref("client").push(clientObj);
 }
