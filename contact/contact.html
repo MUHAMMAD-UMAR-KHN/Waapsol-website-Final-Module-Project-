@@ -2,368 +2,246 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-database-compat.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/0.9.8/firebase-database.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- ✅ Firebase SDKs (v8.3.3) -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
 </head>
 
 <body>
-    <!-- navbar starts -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="../assets/images/logo.png" alt="Logo">
-        </div>
-
-        <!-- Hamburger Menu Icon -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="navlinks">
-            <a class="links" href="../index.html">Home</a>
-            <a class="links" href="../servicesfolder/services.html">Services</a>
-            <a class="links" href="../Team/team.html">Team</a>
-            <a class="links" href="../contact/contact.html">Contact</a>
-        </div>
-    </nav>
-    <!-- navbar ends -->
-
-    <!-- hero section starts here -->
-
-    <div id="hero-section">
-        <div id="hero-1">
-            <h1>Get In <span>Touch</span></h1>
-            <p class="hero-1-content">Have a project in mind? We'd love to hear from you. Let's work together to bring
-                your ideas to life.</p>
-            <button id="project-button" class="scrollBtn">Start a Project <span><i
-                        class="fa-solid fa-arrow-right"></i></span></button>
-        </div>
-        <div id="hero-2">
-            <div class="contact-methods">
-                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="contact-methods-text">
-                    <p style="font-size: 14px;">Email</p>
-                    <p style="font-size: 12px;">waapsolteam@gmail.com</p>
-                </div>
-            </div>
-            <div class="contact-methods">
-                <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                <div class="contact-methods-text">
-                    <p style="font-size: 14px;">Phone</p>
-                    <p style="font-size: 12px;">+923241249821</p>
-                </div>
-            </div>
-            <div class="contact-methods">
-                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="contact-methods-text">
-                    <p style="font-size: 14px;">Address</p>
-                    <p style="font-size: 12px;">Horizon Tech Ltd.22 Bishopsgate, London</p>
-                </div>
-            </div>
-        </div>
+  <!-- navbar starts -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="Logo">
     </div>
-    <!-- hero section ends here -->
 
-    <!-- contact form work starts here -->
-    <div class="form-container" id="myForm">
-        <h2>Send us a message</h2>
-        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-
-        <form action="#" method="post">
-            <div class="row">
-                <div class="form-group">
-                    <label for="name">Name <sup>*</sup></label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email <sup>*</sup></label>
-                    <input type="email" id="email" name="email" placeholder="Your email" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone" placeholder="Your phone">
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company" placeholder="Your company">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Subject <sup>*</sup></label>
-                <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message <sup>*</sup></label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"
-                    required></textarea>
-            </div>
-
-            <button onclick="submitData()" type="submit" class="submit-btn">Send Message</button>
-        </form>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <!-- contact form work starts here -->
 
-    <!-- footer starts here -->
-    <footer>
-        <div id="footer">
-            <div id="footer-1">
-                <h1>Waapsol Tech Limited</h1>
-                <p>We build innovative software solutions for forward-thinking businesses around the world.</p>
-                <span class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                </span>
-            </div>
+    <div class="navlinks">
+      <a class="links" href="../index.html">Home</a>
+      <a class="links" href="../servicesfolder/services.html">Services</a>
+      <a class="links" href="../Team/team.html">Team</a>
+      <a class="links" href="../contact/contact.html">Contact</a>
+    </div>
+  </nav>
+  <!-- navbar ends -->
 
-            <div id="footer-2">
-                <h2>Company</h2>
-                <a href="../index.html">
-                    <p>Home</p>
-                </a>
-                <a href="../servicesfolder/services.html">
-                    <p>Services</p>
-                </a>
-                <a href="../Team/team.html">
-                    <p>Team</p>
-                </a>
-                <a href="../contact/contact.html">
-                    <p>Contact Us</p>
-                </a>
-            </div>
-
-            <div id="footer-3">
-                <h2>Services</h2>
-                <p>Web Development</p>
-                <p>Mobile App Development</p>
-                <p>Cloud Solutions</p>
-                <p>AI and Machine Learning</p>
-            </div>
+  <!-- hero section starts here -->
+  <div id="hero-section">
+    <div id="hero-1">
+      <h1>Get In <span>Touch</span></h1>
+      <p class="hero-1-content">Have a project in mind? We'd love to hear from you. Let's work together to bring
+        your ideas to life.</p>
+      <button id="project-button" class="scrollBtn">Start a Project
+        <span><i class="fa-solid fa-arrow-right"></i></span>
+      </button>
+    </div>
+    <div id="hero-2">
+      <div class="contact-methods">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="contact-methods-text">
+          <p style="font-size: 14px;">Email</p>
+          <p style="font-size: 12px;">waapsolteam@gmail.com</p>
         </div>
-
-        <div class="footer-bottom">
-            <p>© 2025 Waapsol Tech Limited — All Rights Reserved.</p>
+      </div>
+      <div class="contact-methods">
+        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-methods-text">
+          <p style="font-size: 14px;">Phone</p>
+          <p style="font-size: 12px;">+923241249821</p>
         </div>
-    </footer>
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navlinks = document.querySelector('.navlinks');
+      </div>
+      <div class="contact-methods">
+        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-methods-text">
+          <p style="font-size: 14px;">Address</p>
+          <p style="font-size: 12px;">Horizon Tech Ltd.22 Bishopsgate, London</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- hero section ends here -->
 
-        // Toggle menu on hamburger click
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navlinks.classList.toggle('active');
+  <!-- contact form work starts here -->
+  <div class="form-container" id="myForm">
+    <h2>Send us a message</h2>
+    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+    <!-- ✅ Added id + onsubmit -->
+    <form id="contactForm" onsubmit="submitData(event)">
+      <div class="row">
+        <div class="form-group">
+          <label for="name">Name <sup>*</sup></label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <sup>*</sup></label>
+          <input type="email" id="email" name="email" placeholder="Your email" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" placeholder="Your phone">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Your company">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject <sup>*</sup></label>
+        <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message <sup>*</sup></label>
+        <textarea id="message" name="message" rows="5"
+          placeholder="Tell us about your project" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+  <!-- contact form work ends here -->
+
+  <!-- footer starts here -->
+  <footer>
+    <div id="footer">
+      <div id="footer-1">
+        <h1>Waapsol Tech Limited</h1>
+        <p>We build innovative software solutions for forward-thinking businesses around the world.</p>
+        <span class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </span>
+      </div>
+
+      <div id="footer-2">
+        <h2>Company</h2>
+        <a href="../index.html"><p>Home</p></a>
+        <a href="../servicesfolder/services.html"><p>Services</p></a>
+        <a href="../Team/team.html"><p>Team</p></a>
+        <a href="../contact/contact.html"><p>Contact Us</p></a>
+      </div>
+
+      <div id="footer-3">
+        <h2>Services</h2>
+        <p>Web Development</p>
+        <p>Mobile App Development</p>
+        <p>Cloud Solutions</p>
+        <p>AI and Machine Learning</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Waapsol Tech Limited — All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- existing navbar + scroll JS -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navlinks = document.querySelector('.navlinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navlinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.navlinks .links').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navlinks.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navlinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navlinks.classList.remove('active');
+      }
+    });
+
+    const btn = document.querySelector(".scrollBtn");
+    const form = document.getElementById("myForm");
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  </script>
+
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
+      authDomain: "waapsol-form-b0d73.firebaseapp.com",
+      projectId: "waapsol-form-b0d73",
+      storageBucket: "waapsol-form-b0d73.firebasestorage.app",
+      messagingSenderId: "207057410969",
+      appId: "1:207057410969:web:91dcde38265cf001a0d108",
+      measurementId: "G-DZFC07QYCF"
+    };
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    function submitData(event) {
+      event.preventDefault(); // prevent reload
+
+      const namee = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!namee || !email || !message) {
+        alert("Please fill Name, Email and Message fields.");
+        return;
+      }
+
+      const clientObj = {
+        clientname: namee,
+        clientemail: email,
+        clientphone: phone,
+        clientcompany: company,
+        clientsubject: subject,
+        clientmessage: message,
+        timestamp: new Date().toISOString()
+      };
+      console.log(clientObj)
+
+      firebase.database().ref("client").push(clientObj)
+        .then(() => {
+          alert("Message sent successfully!");
+          document.getElementById("contactForm").reset();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Failed to send message: " + error.message);
         });
-
-        // Close menu when clicking on any link
-        document.querySelectorAll('.navlinks .links').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navlinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navlinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navlinks.classList.remove('active');
-            }
-        });
-        const btn = document.querySelector(".scrollBtn");
-        const form = document.getElementById("myForm");
-
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            form.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
-
-    </script>
-
-
-
-
-
-    <!-- Realtime database script provide by chatgpt -->
-
-    <!-- Firebase compat SDK (keeps old syntax) -->
-
-    <!-- <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
-            authDomain: "waapsol-form-b0d73.firebaseapp.com",
-            projectId: "waapsol-form-b0d73",
-            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
-            messagingSenderId: "207057410969",
-            appId: "1:207057410969:web:91dcde38265cf001a0d108",
-            measurementId: "G-DZFC07QYCF"
-            };
-
-            firebase.initializeApp(firebaseConfig);
-            var database = firebase.database();
-
-            function submitData() {
-            var namee = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            var company = document.getElementById("company").value;
-            var subject = document.getElementById("subject").value;
-            var message = document.getElementById("message").value;
-
-            var clientObj = {
-                clientname: namee,
-                clientemail: email,
-                clientphone: phone,
-                clientcompany: company,
-                clientsubject: subject,
-                clientmessage: message,
-                };
-                
-                console.log(clientObj);
-                firebase.database().ref("client").push(clientObj);
-                }
-            </script> -->
-
-
-
-
-
-    <!-- <script src="./contact.js" ></script> -->
-
-
-
-    <!-- Firebase SDK v9+ (modular) -->
-    <script type="module">
-        // Import needed Firebase functions from CDN
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
-            authDomain: "waapsol-form-b0d73.firebaseapp.com",
-            projectId: "waapsol-form-b0d73",
-            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
-            messagingSenderId: "207057410969",
-            appId: "1:207057410969:web:91dcde38265cf001a0d108",
-            measurementId: "G-DZFC07QYCF"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app);
-
-        // Function to submit form data to Firebase Realtime Database
-        window.submitData = function () {
-            const namee = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const company = document.getElementById("company").value;
-            const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value;
-
-            const clientObj = {
-                clientname: namee,
-                clientemail: email,
-                clientphone: phone,
-                clientcompany: company,
-                clientsubject: subject,
-                clientmessage: message,
-            };
-
-            console.log(clientObj);
-
-            // Push to Realtime Database
-            push(ref(database, "client"), clientObj)
-                .then(() => {
-                    alert("Data submitted successfully!");
-                })
-                .catch((error) => {
-                    console.error("Error submitting data:", error);
-                });
-        };
-    </script>
-
-
-
-    <!-- Version 8.3.3 -->
-
-
-    <!-- Firebase SDKs (v8.3.3) -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
-
-    <script>
-        // Your Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyD5rrmGsSswaLdGA2x86qA4valH4e022so",
-            authDomain: "waapsol-form-b0d73.firebaseapp.com",
-            projectId: "waapsol-form-b0d73",
-            storageBucket: "waapsol-form-b0d73.firebasestorage.app",
-            messagingSenderId: "207057410969",
-            appId: "1:207057410969:web:91dcde38265cf001a0d108",
-            measurementId: "G-DZFC07QYCF"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        // Get a reference to the database service
-        var database = firebase.database();
-
-        // Function to submit form data
-        function submitData() {
-            var namee = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            var company = document.getElementById("company").value;
-            var subject = document.getElementById("subject").value;
-            var message = document.getElementById("message").value;
-
-            var clientObj = {
-                clientname: namee,
-                clientemail: email,
-                clientphone: phone,
-                clientcompany: company,
-                clientsubject: subject,
-                clientmessage: message,
-            };
-
-            console.log(clientObj);
-
-            // Push to Realtime Database
-            firebase.database().ref("client").push(clientObj)
-                .then(function () {
-                    alert("Data submitted successfully!");
-                })
-                .catch(function (error) {
-                    console.error("Error submitting data:", error);
-                });
-        }
-    </script> -->
-
-
-
+    }
+  </script>
 </body>
-
 </html>
