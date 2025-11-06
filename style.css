@@ -434,7 +434,7 @@ body {
     border-top: 1px solid var(--primary-blue);
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===== Responsive Breakpoints ===== */
 
 /* Large Tablets & Small Laptops */
 @media (max-width: 1024px) {
